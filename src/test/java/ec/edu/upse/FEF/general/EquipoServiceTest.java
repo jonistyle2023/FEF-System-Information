@@ -45,5 +45,25 @@ class EquipoServiceTest {
 
         assertTrue(ex.getMessage().contains("equipo"));
     }
+
+    @Test
+    void debeConstruirNominaCompletaDeUnEquipo() {
+        EquipoService service = new EquipoService();
+        Equipo equipo = service.registrarEquipo("Independiente", "Sangolqui", EstadoEquipo.ACTIVO);
+
+        service.registrarUtilero(equipo, "1101", "Pedro Luna", "Bodega");
+        service.registrarDirectivo(equipo, "1102", "Mario Ruiz", "Gerente Deportivo");
+        service.registrarTecnico(equipo, "1103", "Luis Gomez", "Ecuatoriana", "DT");
+        service.registrarJugador(equipo, "1104", "Andres Mena", PosicionJugador.MEDIOCAMPISTA, 23, 71.2);
+
+        String nomina = service.construirNominaCompleta(equipo);
+
+        assertTrue(nomina.contains("NOMINA COMPLETA DEL EQUIPO"));
+        assertTrue(nomina.contains("PERSONAL DE UTILERIA"));
+        assertTrue(nomina.contains("DIRECTIVOS"));
+        assertTrue(nomina.contains("EQUIPO TECNICO"));
+        assertTrue(nomina.contains("JUGADORES"));
+        assertTrue(nomina.contains("Andres Mena"));
+    }
 }
 

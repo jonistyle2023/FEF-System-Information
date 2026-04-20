@@ -118,8 +118,9 @@
                     <Label text="Equipo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                     <ComboBox fx:id="cbEquipoResumen" prefWidth="260" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                     <Button text="Ver resumen" onAction="#cargarResumenEquipo" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Button text="Ver nomina completa" onAction="#cargarNominaCompletaEquipo" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
                     <TextArea fx:id="taResumen" prefHeight="300" prefWidth="700" editable="false"
-                              GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+                              GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="4"/>
                 </GridPane>
             </Tab>
         </tabs>
